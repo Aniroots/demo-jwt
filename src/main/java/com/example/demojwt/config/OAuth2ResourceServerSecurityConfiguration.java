@@ -21,6 +21,8 @@ public class OAuth2ResourceServerSecurityConfiguration extends WebSecurityConfig
         http
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
+                                .antMatchers("/token/**").permitAll()
+
                                 .antMatchers("/read-only/**").hasAuthority("SCOPE_message:read")
                                 .anyRequest().authenticated()
                 )
