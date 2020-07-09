@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/demo_jwt
+    username: root
+    password: password
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          key-value: classpath:simple.pub
+logging:
+  level:
+    com:
+      example:
+        demojwt: debug
